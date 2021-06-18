@@ -3,7 +3,7 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 're
 
 class Directory extends Component {
     constructor(props) {
-        super(props);
+        super(props);  //allows you to avoid using this.props.xxxx
         this.state = {
             selectedCampsite: null
         };
@@ -27,7 +27,7 @@ class Directory extends Component {
         }
         return <div />
     }
-
+    //every react component must return an element -- must be wrapped in "render"
     render() {
         const directory = this.props.campsites.map(campsite => {
             return (
