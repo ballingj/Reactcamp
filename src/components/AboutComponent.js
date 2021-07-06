@@ -8,8 +8,7 @@ function RenderPartner ({partner}) {
             <React.Fragment>
                 <Media object src={partner.image} alt={partner.name} width='150' />
                 <Media body className= "ml-5 mb-4">
-                    <media heading> {partner.name}</media> {partner.description}
-
+                    <Media heading> {partner.name}</Media> {partner.description}
                 </Media> 
             </React.Fragment>
         )
@@ -20,9 +19,9 @@ function RenderPartner ({partner}) {
 function About(props) {
     const partners = props.partners.map(partner => {
         return (
-            <media tag="li" key={partner.id}>
+            <Media tag="li" key={partner.id}>
                 <RenderPartner partner={partner} />
-            </media>
+            </Media>
         );
     });
 
