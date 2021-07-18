@@ -21,18 +21,18 @@ export const fetchCampsites = () => dispatch => {
 
     return fetch(baseUrl + 'campsites')
         .then(response => {
-                if (response.ok) {
-                    return response;
-                } else {
-                    const error = new Error(`Error ${response.status}: ${response.statusText}`);
-                    error.response = response;
-                    throw error;
-                }
-            },
-            error => {
-                const errMess = new Error(error.message);
-                throw errMess;
-            }
+          if (response.ok) {
+            return response;
+          } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+          }
+        },
+          error => {
+            const errMess = new Error(error.message);
+            throw errMess;
+          }
         )
         .then(response => response.json())
         .then(campsites => dispatch(addCampsites(campsites)))
@@ -56,14 +56,14 @@ export const addCampsites = campsites => ({
 export const fetchComments = () => dispatch => {
   return fetch(baseUrl + 'comments')
       .then(response => {
-              if (response.ok) {
-                  return response;
-              } else {
-                  const error = new Error(`Error ${response.status}: ${response.statusText}`);
-                  error.response = response;
-                  throw error;
-              }
-          },
+          if (response.ok) {
+              return response;
+          } else {
+              const error = new Error(`Error ${response.status}: ${response.statusText}`);
+              error.response = response;
+              throw error;
+          }
+      },
           error => {
               const errMess = new Error(error.message);
               throw errMess;
@@ -106,15 +106,15 @@ export const postComment = (campsiteId, rating, author, text) => dispatch => {
           }
       })
       .then(response => {
-              if (response.ok) {
-                  return response;
-              } else {
-                  const error = new Error(`Error ${response.status}: ${response.statusText}`);
-                  error.response = response;
-                  throw error;
-              }
-          },
-          error => { throw error; }
+          if (response.ok) {
+              return response;
+          } else {
+              const error = new Error(`Error ${response.status}: ${response.statusText}`);
+              error.response = response;
+              throw error;
+          }
+      },
+      error => { throw error; }
       )
       .then(response => response.json())
       .then(response => dispatch(addComment(response)))
@@ -130,18 +130,18 @@ export const fetchPromotions = () => dispatch => {
 
   return fetch(baseUrl + 'promotions')
       .then(response => {
-              if (response.ok) {
-                  return response;
-              } else {
-                  const error = new Error(`Error ${response.status}: ${response.statusText}`);
-                  error.response = response;
-                  throw error;
-              }
-          },
-          error => {
-              const errMess = new Error(error.message);
-              throw errMess;
+          if (response.ok) {
+              return response;
+          } else {
+              const error = new Error(`Error ${response.status}: ${response.statusText}`);
+              error.response = response;
+              throw error;
           }
+      },
+      error => {
+          const errMess = new Error(error.message);
+          throw errMess;
+      }
       )
       .then(response => response.json())
       .then(promotions => dispatch(addPromotions(promotions)))
