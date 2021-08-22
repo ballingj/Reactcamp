@@ -21,14 +21,24 @@ const mapStateToProps = state => {
   };
 };
 
+// const mapDispatchToProps = {
+//   postComment: (campsiteId, rating, author, text) => (postComment(campsiteId, rating, author, text)),
+//   fetchCampsites: () => (fetchCampsites()),
+//   fetchComments: () => (fetchComments()),
+//   fetchPromotions: () => (fetchPromotions()),
+//   fetchPartners: () => (fetchPartners()),
+//   resetFeedbackForm: () => (actions.reset('feedbackForm')),
+//   postFeedback: ( feedback ) => postFeedback( feedback ),
+// };
+
 const mapDispatchToProps = {
-  postComment: (campsiteId, rating, author, text) => (postComment(campsiteId, rating, author, text)),
-  fetchCampsites: () => (fetchCampsites()),
-  fetchComments: () => (fetchComments()),
-  fetchPromotions: () => (fetchPromotions()),
-  fetchPartners: () => (fetchPartners()),
+  postComment,
+  fetchCampsites,
+  fetchComments,
+  fetchPromotions,
+  fetchPartners,
   resetFeedbackForm: () => (actions.reset('feedbackForm')),
-  postFeedback: ( feedback ) => postFeedback( feedback ),
+  postFeedback,
 };
 
 class Main extends Component {
